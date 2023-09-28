@@ -1,3 +1,4 @@
+import 'package:app_e_commerce/widgets/bottom_sheet.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -160,7 +161,15 @@ class ProductScreen extends StatelessWidget {
                         ),
                       ),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          showModalBottomSheet(
+                            context: context,
+                            backgroundColor: Colors.transparent,
+                            builder: (context) {
+                              return CustomBottomSheet();
+                            },
+                          );
+                        },
                         child: Container(
                           padding: EdgeInsets.symmetric(
                               vertical: 18, horizontal: 70),
